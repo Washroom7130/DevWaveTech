@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { cookies } from "next/headers";
+
 
 export function useAuthorization(allowedRoles: string[]) {
   const router = useRouter();
@@ -9,9 +11,16 @@ export function useAuthorization(allowedRoles: string[]) {
   useEffect(() => {
     async function checkRole() {
       try {
+        const getCookie = async (name: string) => {
+            return (await cookies()).get(name)?.value ?? '';
+        }
+        
+        const cookie = await getCookie('session');
         // Always fetch the role from the backend; no client storage caching.
         const res = await fetch("https://flaskbackendapi.onrender.com/my-role", {
-          credentials: "include",
+          headers: {
+              "Cookie": `session=${cookie};`
+          }
         });
         const data = await res.json();
         const role = data.role;
