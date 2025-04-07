@@ -1,0 +1,162 @@
+/* Tăng chiều ngang của form đăng ký và căn giữa */
+.register-form-wrap {
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;  /* tăng max-width để form dài hơn */
+    margin: 30px auto; /* căn giữa và tạo khoảng cách trên dưới */
+    text-align: center;
+}
+
+/* Tạo lớp cho dòng chứa 2 input bên cạnh nhau */
+.input-row {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.input-row .single-input-item {
+    flex: 1;
+}
+
+/* Giữ lại các style cũ cho label và input */
+.single-input-item {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input.form-control, select.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Các nút */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    background: #B19361;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #24262b;
+}
+
+/* Nếu cần tạo khoảng cách giữa breadcrumb và form */
+.breadcrumb-section {
+    margin-bottom: 30px;
+}
+
+/* Định dạng chung cho modal ẩn/hiện */
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none; /* ẩn mặc định */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px 20px 30px;
+    text-align: center;
+    width: 800px;
+    max-width: 90%; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  
+  
+  /* Nút X ở góc phải trên */
+  .modal-close {
+    position: absolute;
+    top: 10px; 
+    right: 15px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Vòng tròn màu xanh chứa icon check */
+  .icon-container {
+    margin-bottom: 20px;
+  }
+  .icon-check {
+    width: 64px;
+    height: 64px;
+    background-color: #4CAF50; /* Màu xanh */
+    border-radius: 50%;
+    color: #fff;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Hiệu ứng xoay 1 vòng */
+  .rotate-animation {
+    animation: spin 1s linear;
+  }
+  @keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .modal-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .modal-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  /* Link đăng nhập gạch chân và màu khác */
+  .login-link {
+    text-decoration: underline;
+    color: #B19361; /* màu vàng nâu */
+  }
+  
+  /* Nút Đóng */
+  .btn-close {
+    position: absolute;
+    right: 20px; /* để ở góc phải dưới modal */
+    bottom: 20px;
+    background: #B19361;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .btn-close:hover {
+    background: #24262b;
+  }
+  
