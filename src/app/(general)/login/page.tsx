@@ -47,15 +47,6 @@ export default function Login() {
       setMessage(data.message || data.error || "Unknown response");
     });
   };
-
-  useEffect(() => {
-      if (message === "Đăng nhập thành công!") {
-        const timeoutId = setTimeout(() => {
-          window.location.replace('/home');
-        }, 3000);
-        return () => clearTimeout(timeoutId);
-      }
-    }, [message]);
     
       return (
         <>
