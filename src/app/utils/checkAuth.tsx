@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+
 export function useAuthorization(allowedRoles: string[]) {
   const router = useRouter();
   const [authorized, setAuthorized] = useState(false);
@@ -11,6 +12,7 @@ export function useAuthorization(allowedRoles: string[]) {
       try {
         // Always fetch the role from the backend; no client storage caching.
         const res = await fetch("https://flaskbackendapi.onrender.com/my-role", {
+          method: "GET",
           credentials: "include",
         });
         const data = await res.json();

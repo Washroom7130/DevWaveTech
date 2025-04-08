@@ -82,10 +82,10 @@ export function Header({ role }: HeaderProps) {
                   
                     
                     <li>
-                      <Link href="#">Giới thiệu</Link>
+                      <Link href="/about-us">Giới thiệu</Link>
                     </li>
                     <li>
-                      <Link href="#">Liên hệ</Link>
+                      <Link href="/contact-us">Liên hệ</Link>
                     </li>
                     <li>
                       <div className="single-input-item">
